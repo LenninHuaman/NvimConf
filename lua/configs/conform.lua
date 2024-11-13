@@ -1,7 +1,7 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "black", "isort" }
+    -- python = { "black", "isort" }
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
@@ -10,7 +10,7 @@ local options = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
     lsp_fallback = true,
-            },
+  },
 }
 
 return options

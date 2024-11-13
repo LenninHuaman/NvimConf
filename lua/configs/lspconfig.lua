@@ -16,32 +16,32 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.ruff_lsp.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.hoverProvider = false
-  end,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-}
-
-lspconfig.pyright.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  settings = {
-    pyright = {
-      disableOrganizeImports = true,
-      disableTaggedHints = true,
-    },
-    python = {
-      analysis = {
-        diagnosticSeverityOverrides = {
-          reportUndefinedVariable = "none",
-        },
-      },
-    },
-  },
-}
+-- lspconfig.ruff_lsp.setup {
+--   on_attach = function(client, bufnr)
+--     client.server_capabilities.hoverProvider = false
+--   end,
+--   on_init = nvlsp.on_init,
+--   capabilities = nvlsp.capabilities,
+-- }
+--
+-- lspconfig.pyright.setup {
+--   on_attach = nvlsp.on_attach,
+--   on_init = nvlsp.on_init,
+--   capabilities = nvlsp.capabilities,
+--   settings = {
+--     pyright = {
+--       disableOrganizeImports = true,
+--       disableTaggedHints = true,
+--     },
+--     python = {
+--       analysis = {
+--         diagnosticSeverityOverrides = {
+--           reportUndefinedVariable = "none",
+--         },
+--       },
+--     },
+--   },
+-- }
 
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
