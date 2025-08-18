@@ -2,6 +2,7 @@ return {
   'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
+
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
@@ -17,6 +18,7 @@ return {
     statuscolumn = { enabled = true },
     words = { enabled = true },
   },
+
   keys = {
     {
       '<leader>ff',
@@ -26,7 +28,7 @@ return {
       desc = 'Find Files',
     },
     {
-      '<leader>,',
+      '<leader><Tab>',
       function()
         Snacks.picker.buffers()
       end,
@@ -45,6 +47,30 @@ return {
         Snacks.picker.notifications()
       end,
       desc = 'Notification History',
+    },
+
+    -- LSP
+    {
+      'gd',
+      function()
+        Snacks.picker.lsp_definitions()
+      end,
+      desc = '[G]oto [D]efinition',
+    },
+    {
+      'gr',
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      nowait = true,
+      desc = '[G]oto [R]eferences',
+    },
+    {
+      'gI',
+      function()
+        Snacks.picker.lsp_implementations()
+      end,
+      desc = '[G]oto [I]mplementation',
     },
   },
 }
